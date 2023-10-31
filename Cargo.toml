@@ -18,7 +18,7 @@ highway = "1.1"
 seahash = "4.1"
 xxhash-rust = { version = "0.8", features = ["xxh3"] }
 metrohash = "1.0"
-
+cityhasher = "0.1"
 
 [[bench]]
 name = "hash"

@@ -15,6 +15,9 @@ Cmd:
 | Metrohash |       MIT       |              UB, LongNeighbors |
 | Highway   |       MIT       |                           None |
 | Fxhash    |       ???       |                            ??? |
+| CityHash  | MIT, Apache-2.0 |               Sparse, TwoBytes |
+
+## All Algs
 
 ![hash plot](./criterion/hash64/report/lines.svg)
 
@@ -23,3 +26,27 @@ Cmd:
 ![hash violin](./criterion/hash64/report/violin.svg)
 
 <!-- <img src="./criterion/hash64/report/violin.svg"> -->
+
+## All Algs (4B, 8B, 16B)
+
+![hash plot](./criterion/hash64 (4B, 8B, 16B)/report/lines.svg)
+
+![hash violin](./criterion/hash64 (4B, 8B, 16B)/report/violin.svg)
+
+## AHash, Fxhash, Metrohash, Wyhash (4B, 8B, 16B)
+
+![hash plot](./criterion/hash64 (4B, 8B, 16B) v2.0/report/lines.svg)
+
+![hash violin](./criterion/hash64 (4B, 8B, 16B) v2.0/report/violin.svg)
+
+## AHash (+ssse3, +aes) (4B, 8B, 16B)
+
+![hash plot](./criterion/ahash/ahash (+aes +ssse3)/report/lines.svg)
+
+![hash violin](./criterion/ahash/ahash (+aes +ssse3)/report/violin.svg)
+
+## AHash (4B, 8B, 16B)
+
+![hash plot](./criterion/ahash/ahash/report/lines.svg)
+
+![hash violin](./criterion/ahash/ahash/report/violin.svg)
