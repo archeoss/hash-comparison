@@ -14,7 +14,7 @@ Cmd:
 | Seahash   |       MIT       |             PerlinNoise, !msvc |
 | Metrohash |       MIT       |              UB, LongNeighbors |
 | Highway   |       MIT       |                           None |
-| Fxhash    |       ???       |                            ??? |
+| Fxhash    | MIT, Apache-2.0 |                            ??? |
 | CityHash  | MIT, Apache-2.0 |               Sparse, TwoBytes |
 
 ## All Algs
@@ -48,6 +48,8 @@ Cmd:
 <img src="./criterion/hash64 (4B, 8B, 16B) v2.0/report/violin.svg">
 
 ## AHash (+ssse3, +aes) vs Ahash
+
+BYTES = [4, 8, 16, 256, KB, 4 * KB, 16 * KB];
 
 ```sh
 running 0 tests
