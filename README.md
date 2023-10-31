@@ -11,7 +11,9 @@
 | Fxhash    |       ???       |                ??? |
 
 ![hash plot](./criterion/hash64/report/lines.svg)
-<img src="./criterion/hash64/report/lines.svg">
+
+<!-- <img src="./criterion/hash64/report/lines.svg"> -->
 
 ![hash violin](./criterion/hash64/report/violin.svg)
-<img src="./criterion/hash64/report/violin.svg">
+
+<!-- <img src="./criterion/hash64/report/violin.svg"> -->
