@@ -10,7 +10,8 @@ use criterion::{
 
 const KB: usize = 1024;
 const SEED: u64 = 0x0123456789ABCDEF;
-const PARAMS: [usize; 7] = [7, 8, 32, 256, KB, 4 * KB, 16 * KB];
+// const PARAMS: [usize; 7] = [7, 8, 32, 256, KB, 4 * KB, 16 * KB];
+const PARAMS: [usize; 7] = [4, 8, 16, 256, KB, 4 * KB, 16 * KB];
 // const PARAMS: [usize; 3] = [4, 8, 16];
 
 lazy_static::lazy_static! {
@@ -92,149 +93,23 @@ lazy_static::lazy_static! {
 //     }
 //     group.finish();
 // }
-// fn bench_ahash(c: &mut Criterion) {
-//     let plot_config = PlotConfiguration::default().summary_scale(AxisScale::Linear);
-//     let mut group = c.benchmark_group("ahash");
-//     group.measurement_time(Duration::from_secs(5));
-//     group.plot_config(plot_config);
-//     for input in &PARAMS {
-//         group.throughput(Throughput::Bytes(*input as u64));
-//         group.bench_with_input("ahash", input, move |b, &size| {
-//             b.iter_custom(|iters| {
-//                 let mut hasher = ahash::AHasher::default();
-//                 let mut res = Duration::default();
-//                 for _ in 0..iters {
-//                     let time = Instant::now();
-//                     hasher.write(&DATA.as_slice()[..size]);
-//                     hasher.finish();
-//                     res += time.elapsed();
-//                 }
-//                 res
-//             });
-//         });
-//     }
-//     group.finish();
-// }
-
-fn bench_hash64(c: &mut Criterion) {
+fn bench_ahash(c: &mut Criterion) {
     let plot_config = PlotConfiguration::default().summary_scale(AxisScale::Linear);
-    let mut group = c.benchmark_group("hash64");
-    group.measurement_time(Duration::from_secs(4));
+    let mut group = c.benchmark_group("ahash");
+    group.measurement_time(Duration::from_secs(15));
     group.plot_config(plot_config);
     for input in &PARAMS {
         group.throughput(Throughput::Bytes(*input as u64));
-        group.bench_with_input("cityhash", input, move |b, &size| {
-            b.iter_custom(|iters| {
-                let mut hasher = cityhasher::CityHasher::default();
-                let mut res = Duration::default();
-                for _ in 0..iters {
-                    let time = Instant::now();
-                    hasher.write(&DATA.as_slice()[..size]);
-                    hasher.finish();
-                    res += time.elapsed();
-                }
-                res
-            });
-        });
-        group.bench_with_input("fxhash", input, move |b, &size| {
-            b.iter_custom(|iters| {
-                let mut hasher = fxhash::FxHasher64::default();
-                let mut res = Duration::default();
-                for _ in 0..iters {
-                    let time = Instant::now();
-                    hasher.write(&DATA.as_slice()[..size]);
-                    hasher.finish();
-                    res += time.elapsed();
-                }
-                res
-            });
-        });
-        group.bench_with_input("ahash v.0.8.6", input, move |b, &size| {
+        group.bench_with_input("ahash", input, move |b, &size| {
             b.iter_custom(|iters| {
                 let mut hasher = ahash::AHasher::default();
                 let mut res = Duration::default();
                 for _ in 0..iters {
                     let time = Instant::now();
-                    hasher.write(&DATA.as_slice()[..size]);
-                    hasher.finish();
-                    res += time.elapsed();
-                }
-                res
-            });
-        });
-        group.bench_with_input("ahash v.0.7.6", input, move |b, &size| {
-            b.iter_custom(|iters| {
-                let mut hasher = ahash_old::AHasher::default();
-                let mut res = Duration::default();
-                for _ in 0..iters {
-                    let time = Instant::now();
-                    hasher.write(&DATA.as_slice()[..size]);
-                    hasher.finish();
-                    res += time.elapsed();
-                }
-                res
-            });
-        });
-        group.bench_with_input("wyhash", input, move |b, &size| {
-            b.iter_custom(|iters| {
-                let mut hasher = wyhash::WyHash::default();
-                let mut res = Duration::default();
-                for _ in 0..iters {
-                    let time = Instant::now();
-                    hasher.write(&DATA.as_slice()[..size]);
-                    hasher.finish();
-                    res += time.elapsed();
-                }
-                res
-            });
-        });
-        group.bench_with_input("seahash", input, move |b, &size| {
-            b.iter_custom(|iters| {
-                let mut hasher = seahash::SeaHasher::default();
-                let mut res = Duration::default();
-                for _ in 0..iters {
-                    let time = Instant::now();
-                    hasher.write(&DATA.as_slice()[..size]);
-                    hasher.finish();
-                    res += time.elapsed();
-                }
-                res
-            });
-        });
-        group.bench_with_input("xxhash", input, move |b, &size| {
-            b.iter_custom(|iters| {
-                let mut hasher = xxhash_rust::xxh3::Xxh3Builder::default().build_hasher();
-                let mut res = Duration::default();
-                for _ in 0..iters {
-                    let time = Instant::now();
-                    hasher.write(&DATA.as_slice()[..size]);
-                    hasher.finish();
-                    res += time.elapsed();
-                }
-                res
-            });
-        });
-        group.bench_with_input("metrohash", input, move |b, &size| {
-            b.iter_custom(|iters| {
-                let mut hasher = metrohash::MetroHash64::default();
-                let mut res = Duration::default();
-                for _ in 0..iters {
-                    let time = Instant::now();
-                    hasher.write(&DATA.as_slice()[..size]);
-                    hasher.finish();
-                    res += time.elapsed();
-                }
-                res
-            });
-        });
-        group.bench_with_input("highway", input, move |b, &size| {
-            b.iter_custom(|iters| {
-                let mut hasher = highway::HighwayHasher::default();
-                let mut res = Duration::default();
-                for _ in 0..iters {
-                    let time = Instant::now();
-                    hasher.write(&DATA.as_slice()[..size]);
-                    hasher.finish();
+                    black_box({
+                        hasher.write(&DATA.as_slice()[..size]);
+                        hasher.finish()
+                    });
                     res += time.elapsed();
                 }
                 res
@@ -244,8 +119,154 @@ fn bench_hash64(c: &mut Criterion) {
     group.finish();
 }
 
+// fn bench_hash64(c: &mut Criterion) {
+//     let plot_config = PlotConfiguration::default().summary_scale(AxisScale::Linear);
+//     let mut group = c.benchmark_group("hash64 (4B, 8B, 16B)");
+//     group.measurement_time(Duration::from_secs(10));
+//     group.plot_config(plot_config);
+//     for input in &PARAMS {
+//         group.throughput(Throughput::Bytes(*input as u64));
+//         group.bench_with_input("cityhash", input, move |b, &size| {
+//             b.iter_custom(|iters| {
+//                 let mut hasher = cityhasher::CityHasher::default();
+//                 let mut res = Duration::default();
+//                 for _ in 0..iters {
+//                     let time = Instant::now();
+//                     black_box({
+//                         hasher.write(&DATA.as_slice()[..size]);
+//                         hasher.finish();
+//                     });
+//                     res += time.elapsed();
+//                 }
+//                 res
+//             });
+//         });
+//         group.bench_with_input("fxhash", input, move |b, &size| {
+//             b.iter_custom(|iters| {
+//                 let mut hasher = fxhash::FxHasher64::default();
+//                 let mut res = Duration::default();
+//                 for _ in 0..iters {
+//                     let time = Instant::now();
+//                     black_box({
+//                         hasher.write(&DATA.as_slice()[..size]);
+//                         hasher.finish();
+//                     });
+//                     res += time.elapsed();
+//                 }
+//                 res
+//             });
+//         });
+//         group.bench_with_input("ahash v.0.8.6", input, move |b, &size| {
+//             b.iter_custom(|iters| {
+//                 let mut hasher = ahash::AHasher::default();
+//                 let mut res = Duration::default();
+//                 for _ in 0..iters {
+//                     let time = Instant::now();
+//                     black_box({
+//                         hasher.write(&DATA.as_slice()[..size]);
+//                         hasher.finish();
+//                     });
+//                     res += time.elapsed();
+//                 }
+//                 res
+//             });
+//         });
+//         group.bench_with_input("ahash v.0.7.6", input, move |b, &size| {
+//             b.iter_custom(|iters| {
+//                 let mut hasher = ahash_old::AHasher::default();
+//                 let mut res = Duration::default();
+//                 for _ in 0..iters {
+//                     let time = Instant::now();
+//                     black_box({
+//                         hasher.write(&DATA.as_slice()[..size]);
+//                         hasher.finish();
+//                     });
+//                     res += time.elapsed();
+//                 }
+//                 res
+//             });
+//         });
+//         group.bench_with_input("wyhash", input, move |b, &size| {
+//             b.iter_custom(|iters| {
+//                 let mut hasher = wyhash::WyHash::default();
+//                 let mut res = Duration::default();
+//                 for _ in 0..iters {
+//                     let time = Instant::now();
+//                     black_box({
+//                         hasher.write(&DATA.as_slice()[..size]);
+//                         hasher.finish();
+//                     });
+//                     res += time.elapsed();
+//                 }
+//                 res
+//             });
+//         });
+//         group.bench_with_input("seahash", input, move |b, &size| {
+//             b.iter_custom(|iters| {
+//                 let mut hasher = seahash::SeaHasher::default();
+//                 let mut res = Duration::default();
+//                 for _ in 0..iters {
+//                     let time = Instant::now();
+//                     black_box({
+//                         hasher.write(&DATA.as_slice()[..size]);
+//                         hasher.finish();
+//                     });
+//                     res += time.elapsed();
+//                 }
+//                 res
+//             });
+//         });
+//         group.bench_with_input("xxhash", input, move |b, &size| {
+//             b.iter_custom(|iters| {
+//                 let mut hasher = xxhash_rust::xxh3::Xxh3Builder::default().build_hasher();
+//                 let mut res = Duration::default();
+//                 for _ in 0..iters {
+//                     let time = Instant::now();
+//                     black_box({
+//                         hasher.write(&DATA.as_slice()[..size]);
+//                         hasher.finish();
+//                     });
+//                     res += time.elapsed();
+//                 }
+//                 res
+//             });
+//         });
+//         group.bench_with_input("metrohash", input, move |b, &size| {
+//             b.iter_custom(|iters| {
+//                 let mut hasher = metrohash::MetroHash64::default();
+//                 let mut res = Duration::default();
+//                 for _ in 0..iters {
+//                     let time = Instant::now();
+//                     black_box({
+//                         hasher.write(&DATA.as_slice()[..size]);
+//                         hasher.finish();
+//                     });
+//                     res += time.elapsed();
+//                 }
+//                 res
+//             });
+//         });
+//         group.bench_with_input("highway", input, move |b, &size| {
+//             b.iter_custom(|iters| {
+//                 let mut hasher = highway::HighwayHasher::default();
+//                 let mut res = Duration::default();
+//                 for _ in 0..iters {
+//                     let time = Instant::now();
+//                     black_box({
+//                         hasher.write(&DATA.as_slice()[..size]);
+//                         hasher.finish();
+//                     });
+//                     res += time.elapsed();
+//                 }
+//                 res
+//             });
+//         });
+//     }
+//     group.finish();
+// }
+
 // criterion_group!(benches, bench_hash32, bench_hash64, bench_hash128);
 // criterion_group!(benches, bench_hash128);
-// criterion_group!(benches, bench_ahash);
-criterion_group!(benches, bench_hash64);
+criterion_group!(benches, bench_ahash);
+// criterion_group!(benches, bench_hash64);
 criterion_main!(benches);
