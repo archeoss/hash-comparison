@@ -1,5 +1,11 @@
 # hash-comparison
 
+Cmd:
+
+```sh
+ RUSTFLAGS="-C target-feature=+aes,+ssse3,+sse4.2" cargo bench --target=x86_64-unknown-linux-musl
+```
+
 | Alg       |     License     |                       Problems |
 | :-------- | :-------------: | -----------------------------: |
 | xxhash    |     BSL-1.0     | DiffDist bit 7 w. 36 bits, BIC |
