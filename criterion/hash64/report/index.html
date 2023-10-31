@@ -1,0 +1,1361 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>hash64 Summary - Criterion.rs</title>
+    <style type="text/css">
+        body {
+            font: 14px Helvetica Neue;
+            text-rendering: optimizelegibility;
+        }
+
+        .body {
+            width: 960px;
+            margin: auto;
+        }
+
+        a:link {
+            color: #1F78B4;
+            text-decoration: none;
+        }
+
+        h2 {
+            font-size: 36px;
+            font-weight: 300;
+        }
+
+        h3 {
+            font-size: 24px;
+            font-weight: 300;
+        }
+
+        #footer {
+            height: 40px;
+            background: #888;
+            color: white;
+            font-size: larger;
+            font-weight: 300;
+        }
+
+        #footer a {
+            color: white;
+            text-decoration: underline;
+        }
+
+        #footer p {
+            text-align: center
+        }
+    </style>
+</head>
+
+<body>
+    <div class="body">
+        <h2>hash64</h2>
+        <h3>Violin Plot</h3>
+        <a href="violin.svg">
+            <img src="violin.svg" alt="Violin Plot" />
+        </a>
+        <p>This chart shows the relationship between function/parameter and iteration time. The thickness of the shaded
+            region indicates the probability that a measurement of the given function/parameter would take a particular
+            length of time.</p>
+        <h3>Line Chart</h3>
+        <img src="lines.svg" alt="Line Chart" />
+        <p>This chart shows the mean measured time for each function as the input (or the size of the input) increases.</p>
+        <section class="plots">
+            <a href="../../hash64/ahash v.0.7.6/report/index.html">
+                <h4>hash64/ahash v.0.7.6</h4>
+            </a>
+            <table width="100%">
+                <tbody>
+                    <tr>
+                        <td>
+                            <a href="../../hash64/ahash v.0.7.6/report/pdf.svg">
+                                <img src="../../hash64/ahash v.0.7.6/report/pdf_small.svg" alt="PDF of Slope" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                        <td>
+                            <a href="../../hash64/ahash v.0.7.6/report/regression.svg">
+                                <img src="../../hash64/ahash v.0.7.6/report/regression_small.svg" alt="Regression" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section class="plots">
+            <a href="../../hash64/ahash v.0.7.6_2/report/index.html">
+                <h4>hash64/ahash v.0.7.6 #2</h4>
+            </a>
+            <table width="100%">
+                <tbody>
+                    <tr>
+                        <td>
+                            <a href="../../hash64/ahash v.0.7.6_2/report/pdf.svg">
+                                <img src="../../hash64/ahash v.0.7.6_2/report/pdf_small.svg" alt="PDF of Slope" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                        <td>
+                            <a href="../../hash64/ahash v.0.7.6_2/report/regression.svg">
+                                <img src="../../hash64/ahash v.0.7.6_2/report/regression_small.svg" alt="Regression" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section class="plots">
+            <a href="../../hash64/ahash v.0.7.6_3/report/index.html">
+                <h4>hash64/ahash v.0.7.6 #3</h4>
+            </a>
+            <table width="100%">
+                <tbody>
+                    <tr>
+                        <td>
+                            <a href="../../hash64/ahash v.0.7.6_3/report/pdf.svg">
+                                <img src="../../hash64/ahash v.0.7.6_3/report/pdf_small.svg" alt="PDF of Slope" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                        <td>
+                            <a href="../../hash64/ahash v.0.7.6_3/report/regression.svg">
+                                <img src="../../hash64/ahash v.0.7.6_3/report/regression_small.svg" alt="Regression" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section class="plots">
+            <a href="../../hash64/ahash v.0.7.6_4/report/index.html">
+                <h4>hash64/ahash v.0.7.6 #4</h4>
+            </a>
+            <table width="100%">
+                <tbody>
+                    <tr>
+                        <td>
+                            <a href="../../hash64/ahash v.0.7.6_4/report/pdf.svg">
+                                <img src="../../hash64/ahash v.0.7.6_4/report/pdf_small.svg" alt="PDF of Slope" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                        <td>
+                            <a href="../../hash64/ahash v.0.7.6_4/report/regression.svg">
+                                <img src="../../hash64/ahash v.0.7.6_4/report/regression_small.svg" alt="Regression" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section class="plots">
+            <a href="../../hash64/ahash v.0.7.6_5/report/index.html">
+                <h4>hash64/ahash v.0.7.6 #5</h4>
+            </a>
+            <table width="100%">
+                <tbody>
+                    <tr>
+                        <td>
+                            <a href="../../hash64/ahash v.0.7.6_5/report/pdf.svg">
+                                <img src="../../hash64/ahash v.0.7.6_5/report/pdf_small.svg" alt="PDF of Slope" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                        <td>
+                            <a href="../../hash64/ahash v.0.7.6_5/report/regression.svg">
+                                <img src="../../hash64/ahash v.0.7.6_5/report/regression_small.svg" alt="Regression" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section class="plots">
+            <a href="../../hash64/ahash v.0.7.6_6/report/index.html">
+                <h4>hash64/ahash v.0.7.6 #6</h4>
+            </a>
+            <table width="100%">
+                <tbody>
+                    <tr>
+                        <td>
+                            <a href="../../hash64/ahash v.0.7.6_6/report/pdf.svg">
+                                <img src="../../hash64/ahash v.0.7.6_6/report/pdf_small.svg" alt="PDF of Slope" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                        <td>
+                            <a href="../../hash64/ahash v.0.7.6_6/report/regression.svg">
+                                <img src="../../hash64/ahash v.0.7.6_6/report/regression_small.svg" alt="Regression" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section class="plots">
+            <a href="../../hash64/ahash v.0.7.6_7/report/index.html">
+                <h4>hash64/ahash v.0.7.6 #7</h4>
+            </a>
+            <table width="100%">
+                <tbody>
+                    <tr>
+                        <td>
+                            <a href="../../hash64/ahash v.0.7.6_7/report/pdf.svg">
+                                <img src="../../hash64/ahash v.0.7.6_7/report/pdf_small.svg" alt="PDF of Slope" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                        <td>
+                            <a href="../../hash64/ahash v.0.7.6_7/report/regression.svg">
+                                <img src="../../hash64/ahash v.0.7.6_7/report/regression_small.svg" alt="Regression" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section class="plots">
+            <a href="../../hash64/ahash v.0.8.6/report/index.html">
+                <h4>hash64/ahash v.0.8.6</h4>
+            </a>
+            <table width="100%">
+                <tbody>
+                    <tr>
+                        <td>
+                            <a href="../../hash64/ahash v.0.8.6/report/pdf.svg">
+                                <img src="../../hash64/ahash v.0.8.6/report/pdf_small.svg" alt="PDF of Slope" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                        <td>
+                            <a href="../../hash64/ahash v.0.8.6/report/regression.svg">
+                                <img src="../../hash64/ahash v.0.8.6/report/regression_small.svg" alt="Regression" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section class="plots">
+            <a href="../../hash64/ahash v.0.8.6_2/report/index.html">
+                <h4>hash64/ahash v.0.8.6 #2</h4>
+            </a>
+            <table width="100%">
+                <tbody>
+                    <tr>
+                        <td>
+                            <a href="../../hash64/ahash v.0.8.6_2/report/pdf.svg">
+                                <img src="../../hash64/ahash v.0.8.6_2/report/pdf_small.svg" alt="PDF of Slope" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                        <td>
+                            <a href="../../hash64/ahash v.0.8.6_2/report/regression.svg">
+                                <img src="../../hash64/ahash v.0.8.6_2/report/regression_small.svg" alt="Regression" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section class="plots">
+            <a href="../../hash64/ahash v.0.8.6_3/report/index.html">
+                <h4>hash64/ahash v.0.8.6 #3</h4>
+            </a>
+            <table width="100%">
+                <tbody>
+                    <tr>
+                        <td>
+                            <a href="../../hash64/ahash v.0.8.6_3/report/pdf.svg">
+                                <img src="../../hash64/ahash v.0.8.6_3/report/pdf_small.svg" alt="PDF of Slope" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                        <td>
+                            <a href="../../hash64/ahash v.0.8.6_3/report/regression.svg">
+                                <img src="../../hash64/ahash v.0.8.6_3/report/regression_small.svg" alt="Regression" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section class="plots">
+            <a href="../../hash64/ahash v.0.8.6_4/report/index.html">
+                <h4>hash64/ahash v.0.8.6 #4</h4>
+            </a>
+            <table width="100%">
+                <tbody>
+                    <tr>
+                        <td>
+                            <a href="../../hash64/ahash v.0.8.6_4/report/pdf.svg">
+                                <img src="../../hash64/ahash v.0.8.6_4/report/pdf_small.svg" alt="PDF of Slope" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                        <td>
+                            <a href="../../hash64/ahash v.0.8.6_4/report/regression.svg">
+                                <img src="../../hash64/ahash v.0.8.6_4/report/regression_small.svg" alt="Regression" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section class="plots">
+            <a href="../../hash64/ahash v.0.8.6_5/report/index.html">
+                <h4>hash64/ahash v.0.8.6 #5</h4>
+            </a>
+            <table width="100%">
+                <tbody>
+                    <tr>
+                        <td>
+                            <a href="../../hash64/ahash v.0.8.6_5/report/pdf.svg">
+                                <img src="../../hash64/ahash v.0.8.6_5/report/pdf_small.svg" alt="PDF of Slope" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                        <td>
+                            <a href="../../hash64/ahash v.0.8.6_5/report/regression.svg">
+                                <img src="../../hash64/ahash v.0.8.6_5/report/regression_small.svg" alt="Regression" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section class="plots">
+            <a href="../../hash64/ahash v.0.8.6_6/report/index.html">
+                <h4>hash64/ahash v.0.8.6 #6</h4>
+            </a>
+            <table width="100%">
+                <tbody>
+                    <tr>
+                        <td>
+                            <a href="../../hash64/ahash v.0.8.6_6/report/pdf.svg">
+                                <img src="../../hash64/ahash v.0.8.6_6/report/pdf_small.svg" alt="PDF of Slope" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                        <td>
+                            <a href="../../hash64/ahash v.0.8.6_6/report/regression.svg">
+                                <img src="../../hash64/ahash v.0.8.6_6/report/regression_small.svg" alt="Regression" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section class="plots">
+            <a href="../../hash64/ahash v.0.8.6_7/report/index.html">
+                <h4>hash64/ahash v.0.8.6 #7</h4>
+            </a>
+            <table width="100%">
+                <tbody>
+                    <tr>
+                        <td>
+                            <a href="../../hash64/ahash v.0.8.6_7/report/pdf.svg">
+                                <img src="../../hash64/ahash v.0.8.6_7/report/pdf_small.svg" alt="PDF of Slope" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                        <td>
+                            <a href="../../hash64/ahash v.0.8.6_7/report/regression.svg">
+                                <img src="../../hash64/ahash v.0.8.6_7/report/regression_small.svg" alt="Regression" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section class="plots">
+            <a href="../../hash64/fxhash/report/index.html">
+                <h4>hash64/fxhash</h4>
+            </a>
+            <table width="100%">
+                <tbody>
+                    <tr>
+                        <td>
+                            <a href="../../hash64/fxhash/report/pdf.svg">
+                                <img src="../../hash64/fxhash/report/pdf_small.svg" alt="PDF of Slope" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                        <td>
+                            <a href="../../hash64/fxhash/report/regression.svg">
+                                <img src="../../hash64/fxhash/report/regression_small.svg" alt="Regression" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section class="plots">
+            <a href="../../hash64/fxhash_2/report/index.html">
+                <h4>hash64/fxhash #2</h4>
+            </a>
+            <table width="100%">
+                <tbody>
+                    <tr>
+                        <td>
+                            <a href="../../hash64/fxhash_2/report/pdf.svg">
+                                <img src="../../hash64/fxhash_2/report/pdf_small.svg" alt="PDF of Slope" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                        <td>
+                            <a href="../../hash64/fxhash_2/report/regression.svg">
+                                <img src="../../hash64/fxhash_2/report/regression_small.svg" alt="Regression" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section class="plots">
+            <a href="../../hash64/fxhash_3/report/index.html">
+                <h4>hash64/fxhash #3</h4>
+            </a>
+            <table width="100%">
+                <tbody>
+                    <tr>
+                        <td>
+                            <a href="../../hash64/fxhash_3/report/pdf.svg">
+                                <img src="../../hash64/fxhash_3/report/pdf_small.svg" alt="PDF of Slope" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                        <td>
+                            <a href="../../hash64/fxhash_3/report/regression.svg">
+                                <img src="../../hash64/fxhash_3/report/regression_small.svg" alt="Regression" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section class="plots">
+            <a href="../../hash64/fxhash_4/report/index.html">
+                <h4>hash64/fxhash #4</h4>
+            </a>
+            <table width="100%">
+                <tbody>
+                    <tr>
+                        <td>
+                            <a href="../../hash64/fxhash_4/report/pdf.svg">
+                                <img src="../../hash64/fxhash_4/report/pdf_small.svg" alt="PDF of Slope" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                        <td>
+                            <a href="../../hash64/fxhash_4/report/regression.svg">
+                                <img src="../../hash64/fxhash_4/report/regression_small.svg" alt="Regression" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section class="plots">
+            <a href="../../hash64/fxhash_5/report/index.html">
+                <h4>hash64/fxhash #5</h4>
+            </a>
+            <table width="100%">
+                <tbody>
+                    <tr>
+                        <td>
+                            <a href="../../hash64/fxhash_5/report/pdf.svg">
+                                <img src="../../hash64/fxhash_5/report/pdf_small.svg" alt="PDF of Slope" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                        <td>
+                            <a href="../../hash64/fxhash_5/report/regression.svg">
+                                <img src="../../hash64/fxhash_5/report/regression_small.svg" alt="Regression" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section class="plots">
+            <a href="../../hash64/fxhash_6/report/index.html">
+                <h4>hash64/fxhash #6</h4>
+            </a>
+            <table width="100%">
+                <tbody>
+                    <tr>
+                        <td>
+                            <a href="../../hash64/fxhash_6/report/pdf.svg">
+                                <img src="../../hash64/fxhash_6/report/pdf_small.svg" alt="PDF of Slope" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                        <td>
+                            <a href="../../hash64/fxhash_6/report/regression.svg">
+                                <img src="../../hash64/fxhash_6/report/regression_small.svg" alt="Regression" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section class="plots">
+            <a href="../../hash64/fxhash_7/report/index.html">
+                <h4>hash64/fxhash #7</h4>
+            </a>
+            <table width="100%">
+                <tbody>
+                    <tr>
+                        <td>
+                            <a href="../../hash64/fxhash_7/report/pdf.svg">
+                                <img src="../../hash64/fxhash_7/report/pdf_small.svg" alt="PDF of Slope" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                        <td>
+                            <a href="../../hash64/fxhash_7/report/regression.svg">
+                                <img src="../../hash64/fxhash_7/report/regression_small.svg" alt="Regression" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section class="plots">
+            <a href="../../hash64/highway/report/index.html">
+                <h4>hash64/highway</h4>
+            </a>
+            <table width="100%">
+                <tbody>
+                    <tr>
+                        <td>
+                            <a href="../../hash64/highway/report/pdf.svg">
+                                <img src="../../hash64/highway/report/pdf_small.svg" alt="PDF of Slope" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                        <td>
+                            <a href="../../hash64/highway/report/regression.svg">
+                                <img src="../../hash64/highway/report/regression_small.svg" alt="Regression" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section class="plots">
+            <a href="../../hash64/highway_2/report/index.html">
+                <h4>hash64/highway #2</h4>
+            </a>
+            <table width="100%">
+                <tbody>
+                    <tr>
+                        <td>
+                            <a href="../../hash64/highway_2/report/pdf.svg">
+                                <img src="../../hash64/highway_2/report/pdf_small.svg" alt="PDF of Slope" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                        <td>
+                            <a href="../../hash64/highway_2/report/regression.svg">
+                                <img src="../../hash64/highway_2/report/regression_small.svg" alt="Regression" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section class="plots">
+            <a href="../../hash64/highway_3/report/index.html">
+                <h4>hash64/highway #3</h4>
+            </a>
+            <table width="100%">
+                <tbody>
+                    <tr>
+                        <td>
+                            <a href="../../hash64/highway_3/report/pdf.svg">
+                                <img src="../../hash64/highway_3/report/pdf_small.svg" alt="PDF of Slope" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                        <td>
+                            <a href="../../hash64/highway_3/report/regression.svg">
+                                <img src="../../hash64/highway_3/report/regression_small.svg" alt="Regression" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section class="plots">
+            <a href="../../hash64/highway_4/report/index.html">
+                <h4>hash64/highway #4</h4>
+            </a>
+            <table width="100%">
+                <tbody>
+                    <tr>
+                        <td>
+                            <a href="../../hash64/highway_4/report/pdf.svg">
+                                <img src="../../hash64/highway_4/report/pdf_small.svg" alt="PDF of Slope" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                        <td>
+                            <a href="../../hash64/highway_4/report/regression.svg">
+                                <img src="../../hash64/highway_4/report/regression_small.svg" alt="Regression" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section class="plots">
+            <a href="../../hash64/highway_5/report/index.html">
+                <h4>hash64/highway #5</h4>
+            </a>
+            <table width="100%">
+                <tbody>
+                    <tr>
+                        <td>
+                            <a href="../../hash64/highway_5/report/pdf.svg">
+                                <img src="../../hash64/highway_5/report/pdf_small.svg" alt="PDF of Slope" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                        <td>
+                            <a href="../../hash64/highway_5/report/regression.svg">
+                                <img src="../../hash64/highway_5/report/regression_small.svg" alt="Regression" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section class="plots">
+            <a href="../../hash64/highway_6/report/index.html">
+                <h4>hash64/highway #6</h4>
+            </a>
+            <table width="100%">
+                <tbody>
+                    <tr>
+                        <td>
+                            <a href="../../hash64/highway_6/report/pdf.svg">
+                                <img src="../../hash64/highway_6/report/pdf_small.svg" alt="PDF of Slope" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                        <td>
+                            <a href="../../hash64/highway_6/report/regression.svg">
+                                <img src="../../hash64/highway_6/report/regression_small.svg" alt="Regression" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section class="plots">
+            <a href="../../hash64/highway_7/report/index.html">
+                <h4>hash64/highway #7</h4>
+            </a>
+            <table width="100%">
+                <tbody>
+                    <tr>
+                        <td>
+                            <a href="../../hash64/highway_7/report/pdf.svg">
+                                <img src="../../hash64/highway_7/report/pdf_small.svg" alt="PDF of Slope" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                        <td>
+                            <a href="../../hash64/highway_7/report/regression.svg">
+                                <img src="../../hash64/highway_7/report/regression_small.svg" alt="Regression" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section class="plots">
+            <a href="../../hash64/metrohash/report/index.html">
+                <h4>hash64/metrohash</h4>
+            </a>
+            <table width="100%">
+                <tbody>
+                    <tr>
+                        <td>
+                            <a href="../../hash64/metrohash/report/pdf.svg">
+                                <img src="../../hash64/metrohash/report/pdf_small.svg" alt="PDF of Slope" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                        <td>
+                            <a href="../../hash64/metrohash/report/regression.svg">
+                                <img src="../../hash64/metrohash/report/regression_small.svg" alt="Regression" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section class="plots">
+            <a href="../../hash64/metrohash_2/report/index.html">
+                <h4>hash64/metrohash #2</h4>
+            </a>
+            <table width="100%">
+                <tbody>
+                    <tr>
+                        <td>
+                            <a href="../../hash64/metrohash_2/report/pdf.svg">
+                                <img src="../../hash64/metrohash_2/report/pdf_small.svg" alt="PDF of Slope" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                        <td>
+                            <a href="../../hash64/metrohash_2/report/regression.svg">
+                                <img src="../../hash64/metrohash_2/report/regression_small.svg" alt="Regression" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section class="plots">
+            <a href="../../hash64/metrohash_3/report/index.html">
+                <h4>hash64/metrohash #3</h4>
+            </a>
+            <table width="100%">
+                <tbody>
+                    <tr>
+                        <td>
+                            <a href="../../hash64/metrohash_3/report/pdf.svg">
+                                <img src="../../hash64/metrohash_3/report/pdf_small.svg" alt="PDF of Slope" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                        <td>
+                            <a href="../../hash64/metrohash_3/report/regression.svg">
+                                <img src="../../hash64/metrohash_3/report/regression_small.svg" alt="Regression" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section class="plots">
+            <a href="../../hash64/metrohash_4/report/index.html">
+                <h4>hash64/metrohash #4</h4>
+            </a>
+            <table width="100%">
+                <tbody>
+                    <tr>
+                        <td>
+                            <a href="../../hash64/metrohash_4/report/pdf.svg">
+                                <img src="../../hash64/metrohash_4/report/pdf_small.svg" alt="PDF of Slope" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                        <td>
+                            <a href="../../hash64/metrohash_4/report/regression.svg">
+                                <img src="../../hash64/metrohash_4/report/regression_small.svg" alt="Regression" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section class="plots">
+            <a href="../../hash64/metrohash_5/report/index.html">
+                <h4>hash64/metrohash #5</h4>
+            </a>
+            <table width="100%">
+                <tbody>
+                    <tr>
+                        <td>
+                            <a href="../../hash64/metrohash_5/report/pdf.svg">
+                                <img src="../../hash64/metrohash_5/report/pdf_small.svg" alt="PDF of Slope" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                        <td>
+                            <a href="../../hash64/metrohash_5/report/regression.svg">
+                                <img src="../../hash64/metrohash_5/report/regression_small.svg" alt="Regression" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section class="plots">
+            <a href="../../hash64/metrohash_6/report/index.html">
+                <h4>hash64/metrohash #6</h4>
+            </a>
+            <table width="100%">
+                <tbody>
+                    <tr>
+                        <td>
+                            <a href="../../hash64/metrohash_6/report/pdf.svg">
+                                <img src="../../hash64/metrohash_6/report/pdf_small.svg" alt="PDF of Slope" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                        <td>
+                            <a href="../../hash64/metrohash_6/report/regression.svg">
+                                <img src="../../hash64/metrohash_6/report/regression_small.svg" alt="Regression" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section class="plots">
+            <a href="../../hash64/metrohash_7/report/index.html">
+                <h4>hash64/metrohash #7</h4>
+            </a>
+            <table width="100%">
+                <tbody>
+                    <tr>
+                        <td>
+                            <a href="../../hash64/metrohash_7/report/pdf.svg">
+                                <img src="../../hash64/metrohash_7/report/pdf_small.svg" alt="PDF of Slope" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                        <td>
+                            <a href="../../hash64/metrohash_7/report/regression.svg">
+                                <img src="../../hash64/metrohash_7/report/regression_small.svg" alt="Regression" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section class="plots">
+            <a href="../../hash64/seahash/report/index.html">
+                <h4>hash64/seahash</h4>
+            </a>
+            <table width="100%">
+                <tbody>
+                    <tr>
+                        <td>
+                            <a href="../../hash64/seahash/report/pdf.svg">
+                                <img src="../../hash64/seahash/report/pdf_small.svg" alt="PDF of Slope" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                        <td>
+                            <a href="../../hash64/seahash/report/regression.svg">
+                                <img src="../../hash64/seahash/report/regression_small.svg" alt="Regression" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section class="plots">
+            <a href="../../hash64/seahash_2/report/index.html">
+                <h4>hash64/seahash #2</h4>
+            </a>
+            <table width="100%">
+                <tbody>
+                    <tr>
+                        <td>
+                            <a href="../../hash64/seahash_2/report/pdf.svg">
+                                <img src="../../hash64/seahash_2/report/pdf_small.svg" alt="PDF of Slope" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                        <td>
+                            <a href="../../hash64/seahash_2/report/regression.svg">
+                                <img src="../../hash64/seahash_2/report/regression_small.svg" alt="Regression" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section class="plots">
+            <a href="../../hash64/seahash_3/report/index.html">
+                <h4>hash64/seahash #3</h4>
+            </a>
+            <table width="100%">
+                <tbody>
+                    <tr>
+                        <td>
+                            <a href="../../hash64/seahash_3/report/pdf.svg">
+                                <img src="../../hash64/seahash_3/report/pdf_small.svg" alt="PDF of Slope" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                        <td>
+                            <a href="../../hash64/seahash_3/report/regression.svg">
+                                <img src="../../hash64/seahash_3/report/regression_small.svg" alt="Regression" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section class="plots">
+            <a href="../../hash64/seahash_4/report/index.html">
+                <h4>hash64/seahash #4</h4>
+            </a>
+            <table width="100%">
+                <tbody>
+                    <tr>
+                        <td>
+                            <a href="../../hash64/seahash_4/report/pdf.svg">
+                                <img src="../../hash64/seahash_4/report/pdf_small.svg" alt="PDF of Slope" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                        <td>
+                            <a href="../../hash64/seahash_4/report/regression.svg">
+                                <img src="../../hash64/seahash_4/report/regression_small.svg" alt="Regression" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section class="plots">
+            <a href="../../hash64/seahash_5/report/index.html">
+                <h4>hash64/seahash #5</h4>
+            </a>
+            <table width="100%">
+                <tbody>
+                    <tr>
+                        <td>
+                            <a href="../../hash64/seahash_5/report/pdf.svg">
+                                <img src="../../hash64/seahash_5/report/pdf_small.svg" alt="PDF of Slope" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                        <td>
+                            <a href="../../hash64/seahash_5/report/regression.svg">
+                                <img src="../../hash64/seahash_5/report/regression_small.svg" alt="Regression" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section class="plots">
+            <a href="../../hash64/seahash_6/report/index.html">
+                <h4>hash64/seahash #6</h4>
+            </a>
+            <table width="100%">
+                <tbody>
+                    <tr>
+                        <td>
+                            <a href="../../hash64/seahash_6/report/pdf.svg">
+                                <img src="../../hash64/seahash_6/report/pdf_small.svg" alt="PDF of Slope" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                        <td>
+                            <a href="../../hash64/seahash_6/report/regression.svg">
+                                <img src="../../hash64/seahash_6/report/regression_small.svg" alt="Regression" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section class="plots">
+            <a href="../../hash64/seahash_7/report/index.html">
+                <h4>hash64/seahash #7</h4>
+            </a>
+            <table width="100%">
+                <tbody>
+                    <tr>
+                        <td>
+                            <a href="../../hash64/seahash_7/report/pdf.svg">
+                                <img src="../../hash64/seahash_7/report/pdf_small.svg" alt="PDF of Slope" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                        <td>
+                            <a href="../../hash64/seahash_7/report/regression.svg">
+                                <img src="../../hash64/seahash_7/report/regression_small.svg" alt="Regression" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section class="plots">
+            <a href="../../hash64/wyhash/report/index.html">
+                <h4>hash64/wyhash</h4>
+            </a>
+            <table width="100%">
+                <tbody>
+                    <tr>
+                        <td>
+                            <a href="../../hash64/wyhash/report/pdf.svg">
+                                <img src="../../hash64/wyhash/report/pdf_small.svg" alt="PDF of Slope" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                        <td>
+                            <a href="../../hash64/wyhash/report/regression.svg">
+                                <img src="../../hash64/wyhash/report/regression_small.svg" alt="Regression" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section class="plots">
+            <a href="../../hash64/wyhash_2/report/index.html">
+                <h4>hash64/wyhash #2</h4>
+            </a>
+            <table width="100%">
+                <tbody>
+                    <tr>
+                        <td>
+                            <a href="../../hash64/wyhash_2/report/pdf.svg">
+                                <img src="../../hash64/wyhash_2/report/pdf_small.svg" alt="PDF of Slope" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                        <td>
+                            <a href="../../hash64/wyhash_2/report/regression.svg">
+                                <img src="../../hash64/wyhash_2/report/regression_small.svg" alt="Regression" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section class="plots">
+            <a href="../../hash64/wyhash_3/report/index.html">
+                <h4>hash64/wyhash #3</h4>
+            </a>
+            <table width="100%">
+                <tbody>
+                    <tr>
+                        <td>
+                            <a href="../../hash64/wyhash_3/report/pdf.svg">
+                                <img src="../../hash64/wyhash_3/report/pdf_small.svg" alt="PDF of Slope" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                        <td>
+                            <a href="../../hash64/wyhash_3/report/regression.svg">
+                                <img src="../../hash64/wyhash_3/report/regression_small.svg" alt="Regression" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section class="plots">
+            <a href="../../hash64/wyhash_4/report/index.html">
+                <h4>hash64/wyhash #4</h4>
+            </a>
+            <table width="100%">
+                <tbody>
+                    <tr>
+                        <td>
+                            <a href="../../hash64/wyhash_4/report/pdf.svg">
+                                <img src="../../hash64/wyhash_4/report/pdf_small.svg" alt="PDF of Slope" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                        <td>
+                            <a href="../../hash64/wyhash_4/report/regression.svg">
+                                <img src="../../hash64/wyhash_4/report/regression_small.svg" alt="Regression" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section class="plots">
+            <a href="../../hash64/wyhash_5/report/index.html">
+                <h4>hash64/wyhash #5</h4>
+            </a>
+            <table width="100%">
+                <tbody>
+                    <tr>
+                        <td>
+                            <a href="../../hash64/wyhash_5/report/pdf.svg">
+                                <img src="../../hash64/wyhash_5/report/pdf_small.svg" alt="PDF of Slope" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                        <td>
+                            <a href="../../hash64/wyhash_5/report/regression.svg">
+                                <img src="../../hash64/wyhash_5/report/regression_small.svg" alt="Regression" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section class="plots">
+            <a href="../../hash64/wyhash_6/report/index.html">
+                <h4>hash64/wyhash #6</h4>
+            </a>
+            <table width="100%">
+                <tbody>
+                    <tr>
+                        <td>
+                            <a href="../../hash64/wyhash_6/report/pdf.svg">
+                                <img src="../../hash64/wyhash_6/report/pdf_small.svg" alt="PDF of Slope" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                        <td>
+                            <a href="../../hash64/wyhash_6/report/regression.svg">
+                                <img src="../../hash64/wyhash_6/report/regression_small.svg" alt="Regression" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section class="plots">
+            <a href="../../hash64/wyhash_7/report/index.html">
+                <h4>hash64/wyhash #7</h4>
+            </a>
+            <table width="100%">
+                <tbody>
+                    <tr>
+                        <td>
+                            <a href="../../hash64/wyhash_7/report/pdf.svg">
+                                <img src="../../hash64/wyhash_7/report/pdf_small.svg" alt="PDF of Slope" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                        <td>
+                            <a href="../../hash64/wyhash_7/report/regression.svg">
+                                <img src="../../hash64/wyhash_7/report/regression_small.svg" alt="Regression" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section class="plots">
+            <a href="../../hash64/xxhash/report/index.html">
+                <h4>hash64/xxhash</h4>
+            </a>
+            <table width="100%">
+                <tbody>
+                    <tr>
+                        <td>
+                            <a href="../../hash64/xxhash/report/pdf.svg">
+                                <img src="../../hash64/xxhash/report/pdf_small.svg" alt="PDF of Slope" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                        <td>
+                            <a href="../../hash64/xxhash/report/regression.svg">
+                                <img src="../../hash64/xxhash/report/regression_small.svg" alt="Regression" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section class="plots">
+            <a href="../../hash64/xxhash_2/report/index.html">
+                <h4>hash64/xxhash #2</h4>
+            </a>
+            <table width="100%">
+                <tbody>
+                    <tr>
+                        <td>
+                            <a href="../../hash64/xxhash_2/report/pdf.svg">
+                                <img src="../../hash64/xxhash_2/report/pdf_small.svg" alt="PDF of Slope" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                        <td>
+                            <a href="../../hash64/xxhash_2/report/regression.svg">
+                                <img src="../../hash64/xxhash_2/report/regression_small.svg" alt="Regression" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section class="plots">
+            <a href="../../hash64/xxhash_3/report/index.html">
+                <h4>hash64/xxhash #3</h4>
+            </a>
+            <table width="100%">
+                <tbody>
+                    <tr>
+                        <td>
+                            <a href="../../hash64/xxhash_3/report/pdf.svg">
+                                <img src="../../hash64/xxhash_3/report/pdf_small.svg" alt="PDF of Slope" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                        <td>
+                            <a href="../../hash64/xxhash_3/report/regression.svg">
+                                <img src="../../hash64/xxhash_3/report/regression_small.svg" alt="Regression" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section class="plots">
+            <a href="../../hash64/xxhash_4/report/index.html">
+                <h4>hash64/xxhash #4</h4>
+            </a>
+            <table width="100%">
+                <tbody>
+                    <tr>
+                        <td>
+                            <a href="../../hash64/xxhash_4/report/pdf.svg">
+                                <img src="../../hash64/xxhash_4/report/pdf_small.svg" alt="PDF of Slope" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                        <td>
+                            <a href="../../hash64/xxhash_4/report/regression.svg">
+                                <img src="../../hash64/xxhash_4/report/regression_small.svg" alt="Regression" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section class="plots">
+            <a href="../../hash64/xxhash_5/report/index.html">
+                <h4>hash64/xxhash #5</h4>
+            </a>
+            <table width="100%">
+                <tbody>
+                    <tr>
+                        <td>
+                            <a href="../../hash64/xxhash_5/report/pdf.svg">
+                                <img src="../../hash64/xxhash_5/report/pdf_small.svg" alt="PDF of Slope" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                        <td>
+                            <a href="../../hash64/xxhash_5/report/regression.svg">
+                                <img src="../../hash64/xxhash_5/report/regression_small.svg" alt="Regression" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section class="plots">
+            <a href="../../hash64/xxhash_6/report/index.html">
+                <h4>hash64/xxhash #6</h4>
+            </a>
+            <table width="100%">
+                <tbody>
+                    <tr>
+                        <td>
+                            <a href="../../hash64/xxhash_6/report/pdf.svg">
+                                <img src="../../hash64/xxhash_6/report/pdf_small.svg" alt="PDF of Slope" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                        <td>
+                            <a href="../../hash64/xxhash_6/report/regression.svg">
+                                <img src="../../hash64/xxhash_6/report/regression_small.svg" alt="Regression" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section class="plots">
+            <a href="../../hash64/xxhash_7/report/index.html">
+                <h4>hash64/xxhash #7</h4>
+            </a>
+            <table width="100%">
+                <tbody>
+                    <tr>
+                        <td>
+                            <a href="../../hash64/xxhash_7/report/pdf.svg">
+                                <img src="../../hash64/xxhash_7/report/pdf_small.svg" alt="PDF of Slope" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                        <td>
+                            <a href="../../hash64/xxhash_7/report/regression.svg">
+                                <img src="../../hash64/xxhash_7/report/regression_small.svg" alt="Regression" width="450"
+                                    height="300" />
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </div>
+    <div id="footer">
+        <p>This report was generated by
+            <a href="https://github.com/bheisler/criterion.rs">Criterion.rs</a>, a statistics-driven benchmarking
+            library in Rust.</p>
+    </div>
+</body>
+
+</html>

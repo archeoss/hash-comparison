@@ -1,0 +1,27 @@
+[package]
+name = "hash-test"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dev-dependencies]
+criterion = { version = "0.5", features = ["html_reports"] }
+lazy_static = "1.4"
+
+ahash = "0.8"
+ahash_old = { package = "ahash", git = 'https://github.com/tkaitchuck/aHash/', rev = 'e77cab8c1e15bfc9f54dfd28bd8820c2a7bb27c4' }
+wyhash = "0.5" 
+fxhash = "0.2" 
+# fasthash = "0.4"
+highway = "1.1" 
+seahash = "4.1"
+xxhash-rust = { version = "0.8", features = ["xxh3"] }
+metrohash = "1.0"
+
+
+[[bench]]
+name = "hash"
+harness = false
+
+
