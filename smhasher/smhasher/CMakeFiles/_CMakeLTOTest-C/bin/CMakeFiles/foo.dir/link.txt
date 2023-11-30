@@ -1,0 +1,2 @@
+"/sbin/gcc-ar" cr libfoo.a CMakeFiles/foo.dir/foo.c.o
+"/sbin/gcc-ranlib" libfoo.a

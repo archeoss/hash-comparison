@@ -1,0 +1,21 @@
+[package]
+name = "hash-cbindings"
+version = "0.1.2"
+edition = "2021"
+description = "C bindings for aHash so that it can be invoked by SMHasher to verify quality."
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[lib]
+name = "wyhash_3"
+crate-type = ["staticlib"] # Creates static lib
+
+[profile.release]
+opt-level = 3
+debug = false
+lto = 'fat'
+debug-assertions = false
+
+[dependencies]
+hash-test = { path = "../", default-features = false }
+ahash = "0.8"
+wyhash = "0.5"

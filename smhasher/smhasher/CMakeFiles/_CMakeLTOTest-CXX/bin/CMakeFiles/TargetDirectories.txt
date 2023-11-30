@@ -1,0 +1,4 @@
+/home/archeoss/playground/smhasher/smhasher/CMakeFiles/_CMakeLTOTest-CXX/bin/CMakeFiles/foo.dir
+/home/archeoss/playground/smhasher/smhasher/CMakeFiles/_CMakeLTOTest-CXX/bin/CMakeFiles/boo.dir
+/home/archeoss/playground/smhasher/smhasher/CMakeFiles/_CMakeLTOTest-CXX/bin/CMakeFiles/edit_cache.dir
+/home/archeoss/playground/smhasher/smhasher/CMakeFiles/_CMakeLTOTest-CXX/bin/CMakeFiles/rebuild_cache.dir
